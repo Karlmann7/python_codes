@@ -3,7 +3,7 @@ Module for approximating sqrt.
 More ...
 """
 
-def sqrt2(x):
+def sqrt2(x, debug=False):
 	"""
 	More details.
 	"""
@@ -11,10 +11,13 @@ def sqrt2(x):
 	kmax = 100
 	tol  = 1.e-14
 	for k in range(kmax):
-		print("Before iteration %s, s = %20.15f" %(k, s))
+		if debug:
+			print("Before iteration %s, s = %20.15f" %(k, s))
 		s0 = s
 		s = 0.5*(s + x/s)
 		delta_s = s - s0
 		if abs(delta_s/x) < tol:
 			break
-	print("After %s iteration, s = %20.15f" %(k+1,s))
+	if debug:
+		print("After %s iteration, s = %20.15f" %(k+1,s))
+	return s
