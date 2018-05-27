@@ -1,5 +1,12 @@
+"""
+Module for approximating sqrt.
+More ...
+"""
 
 def sqrt2(x):
+	"""
+	More details.
+	"""
 	s = 1.
 	kmax = 100
 	tol  = 1.e-14
